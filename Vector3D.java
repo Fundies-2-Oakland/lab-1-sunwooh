@@ -24,7 +24,7 @@ public class Vector3D {
     }
 
     public double getMagnitude() {
-        return Math.sqrt(x * x + y * y + z * z);
+        return Math.sqrt((x * x) + (y * y) + (z * z));
     }
 
     public Vector3D normalize() {
@@ -49,7 +49,7 @@ public class Vector3D {
 
     public double angleBetween(Vector3D other) {
         if (getMagnitude() * other.getMagnitude() == 0) {
-            throw new IllegalStateException("IllegalStateException (Cannot find an angle if there is magnitude of 0)");
+            throw new IllegalStateException("IllegalStateException (Cannot find an angle if there is a magnitude value of 0)");
         }
         return dotProduct(other) / (getMagnitude() * other.getMagnitude());
     }

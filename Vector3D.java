@@ -51,7 +51,7 @@ public class Vector3D {
         if (getMagnitude() * other.getMagnitude() == 0) {
             throw new IllegalStateException("IllegalStateException (Cannot find an angle if there is a magnitude value of 0)");
         }
-        return dotProduct(other) / (getMagnitude() * other.getMagnitude());
+        return Math.acos(dotProduct(other) / (getMagnitude() * other.getMagnitude())) * (180 / Math.PI);
     }
 
     public Vector3D crossVector(Vector3D other) {
